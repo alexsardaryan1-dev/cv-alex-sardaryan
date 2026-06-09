@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Sardaryan — Full Stack Developer</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>
+  <rect width='32' height='32' rx='6' fill='%230E0E0E'/>
+  <text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle'
+    font-family='monospace' font-size='13' font-weight='900' fill='%23DFF11E'>
+    DEV
+  </text>
+</svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark1: "#121212",
+                        dark2: "#2a2a2a",
+                        green1: "#DFF11E",
+                        green2: "#c1cf21",
+                        white1: "#f4f4f4",
+                        white2: "#FFFFFF",
+                        grey1: "#94a3b8",
+                        grey2: "#ececec",
+                    },
+                    fontFamily: {
+                        inter: ["Inter", "sans-serif"],
+                    },
+                    letterSpacing: {
+                        tight: "0.03em",
+                        tighter: "0.05em",
+                        wide: "0.15em",
+                        wider: "0.2em",
+                        widest: "0.08em",
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                border: none !important;
+            }
+
+            .cv-page {
+                max-width: 100%;
+                margin: 0 !important;
+                padding: 0 !important;
+                border: 1px solid #2a2a2a;
+                page-break-before: avoid;
+                page-break-inside: avoid;
+            }
+
+            header {
+                padding: 20px 25px !important;
+                page-break-after: avoid;
+                gap: 15px !important;
+            }
+
+            .flex.flex-col.gap-3 {
+                gap: 8px !important;
+            }
+
+            .flex.flex-col.gap-1.5 {
+                gap: 4px !important;
+            }
+
+            main {
+                padding: 20px 25px !important;
+                flex: 1;
+            }
+
+            aside {
+                padding: 20px 15px !important;
+                width: 200px;
+            }
+
+            .mb-6 {
+                margin-bottom: 10px !important;
+            }
+
+            .mb-5\.5 {
+                margin-bottom: 10px !important;
+            }
+
+            .mb-4 {
+                margin-bottom: 8px !important;
+            }
+
+            .mb-3 {
+                margin-bottom: 6px !important;
+            }
+
+            .gap-3\.5 {
+                gap: 6px !important;
+            }
+
+            .section-name {
+                font-size: 9px;
+                margin-bottom: 8px;
+                page-break-inside: avoid;
+            }
+
+            .summary-info {
+                font-size: 10.5px;
+                line-height: 1.5;
+            }
+
+            .exp-part {
+                margin-bottom: 10px;
+                page-break-inside: avoid;
+            }
+
+            .exp-name {
+                font-size: 10.5px;
+            }
+
+            .exp-year {
+                font-size: 9px;
+                padding: 2px 6px;
+            }
+
+            .exp-subname {
+                font-size: 9px;
+                margin-bottom: 4px;
+            }
+
+            .exp-duties li {
+                font-size: 9.5px;
+                line-height: 1.4;
+            }
+
+            .skill-container-name {
+                font-size: 9px;
+                margin-bottom: 4px;
+            }
+
+            .skill {
+                font-size: 9px;
+                padding: 2px 6px;
+            }
+
+            .lang-name {
+                font-size: 10px;
+            }
+
+            .lang-level {
+                font-size: 9px;
+            }
+
+            .detail-label {
+                font-size: 8px;
+                margin-bottom: 2px;
+            }
+
+            .detail-value {
+                font-size: 10px;
+            }
+
+            .details-items {
+                margin-bottom: 6px;
+                padding-bottom: 6px;
+                page-break-inside: avoid;
+            }
+
+            .download-btn {
+                display: none;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            ul {
+                page-break-inside: avoid;
+            }
+
+            .flex.flex-col {
+                page-break-inside: avoid;
+            }
+        }
+
+        .exp-duties li::before {
+            content: '→';
+        }
+
+        .lang-fill--fluent {
+            width: 95%;
+        }
+
+        .lang-fill--intermediate {
+            width: 55%;
+        }
+    </style>
+</head>
+
+<body class="bg-dark1 text-white font-inter font-normal tracking-tight p-5 border border-dark2 md:p-8">
+
+    <article class="cv-page max-w-3xl mx-auto p-0 border border-dark2">
+
+        <!-- HEADER -->
+
+        <header
+            class="flex justify-between items-center p-10 bg-dark1 border-l-4 border-green1 gap-5 md:gap-0 md:flex-row flex-col items-start md:items-center">
+
+            <div class="flex flex-col gap-3 text-center items-center md:items-start md:text-left">
+                <h1 class="text-2xl font-medium tracking-tighter uppercase md:text-3xl">Alex Sardaryan</h1>
+                <div class="text-sm text-green1 font-normal tracking-wide border border-green1 py-2 rounded px-2">Full
+                    Stack Developer</div>
+                <div class="text-sm text-white1 font-normal">React.js · Node.js · MySQL</div>
+                <a href="alex-sardaryan-fs-cv.pdf" download="alex-sardaryan-fs-cv.pdf"
+                    class="flex items-center w-max gap-1.5 px-2.5 py-1.5 bg-green1 text-dark1 text-xs font-medium tracking-widest rounded-full transition-colors hover:bg-white1 border border-green1 hover:border-dark1">
+                    <i class="fa-solid fa-download"></i>
+                    Save
+                </a>
+            </div>
+
+            <address class="text-sm text-grey1 not-italic flex justify-between gap-3 md:flex-row flex-col md:items-end">
+
+                <div class="flex flex-col gap-3">
+                    <span class="flex items-center gap-1 text-grey1"><i
+                            class="fa-solid fa-earth-americas text-green1"></i>Yerevan, Armenia</span>
+                    <span class="flex items-center gap-1"><a href="mailto:alexsardaryan1dev@gmail.com"
+                            class="flex items-center gap-1 text-grey1 hover:text-green1 transition-colors"><i
+                                class="fa-solid fa-envelope text-green1"></i>alexsardaryan1dev@gmail.com</a></span>
+                    <span class="flex items-center gap-1 text-grey1"><i class="fa-solid fa-phone text-green1"></i>+374
+                        41 03 08 28</span>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <span class="flex items-center"><a href="https://github.com/alexsardaryan1-dev" target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-1 text-grey1 hover:text-green1 transition-colors"><i
+                                class="fa-brands fa-github text-green1"></i>GitHub</a></span>
+                    <span class="flex items-center"><a href="https://www.linkedin.com/in/alex-sardaryan-34b623398/"
+                            target="_blank" rel="noopener noreferrer"
+                            class="flex items-center gap-1 text-grey1 hover:text-green1 transition-colors"><i
+                                class="fa-brands fa-linkedin-in text-green1"></i>LinkedIn</a></span>
+                    <span class="flex items-center"><a href="https://alexsardaryan1-dev.github.io/cv-website-dev/"
+                            target="_blank" rel="noopener noreferrer"
+                            class="flex items-center gap-1 text-grey1 hover:text-green1 transition-colors"><i
+                                class="fa-solid fa-link text-green1"></i>Website</a></span>
+                </div>
+
+            </address>
+
+        </header>
+
+        <div class="flex flex-col md:flex-row gap-0 p-0 bg-white2">
+
+            <!-- MAIN COLUMN -->
+
+            <main class="flex-1 min-w-0 p-10 md:p-6">
+
+                <!-- SUMMARY -->
+
+                <section class="mb-6 last:mb-0">
+                    <h2 class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
+                            class="w-8 h-1 bg-green1 rounded flex-shrink-0"></span>SUMMARY<span
+                            class="flex-1 h-px bg-grey2"></span></h2>
+                    <p class="text-dark1 leading-relaxed text-sm border-l-4 border-green1 pl-4">
+                        Full Stack Developer building production-grade web applications using React.js, Node.js,
+                        Express.js, and MySQL. Proven expertise in architecting scalable full-stack solutions,
+                        designing efficient database schemas, and developing responsive user interfaces. Strong
+                        foundation in REST API development, OOP principles, and clean code architecture.
+                        Seeking Junior or Mid-level Full Stack, Backend, or Frontend Developer position.
+                    </p>
+                </section>
+
+                <!-- EXPERIENCE -->
+
+                <section class="mb-6 last:mb-0">
+                    <h2 class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
+                            class="w-8 h-1 bg-green1 rounded flex-shrink-0"></span>EXPERIENCE<span
+                            class="flex-1 h-px bg-grey2"></span></h2>
+
+                    <article class="mb-5 last:mb-0">
+                        <div class="flex justify-between items-center mb-1 gap-2.5">
+                            <h3 class="text-sm font-bold text-dark1">Full Stack Developer</h3>
+                            <time
+                                class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
+                                2025 – Present</time>
+                        </div>
+                        <div class="text-sm text-grey1 mb-2 italic">Freelance — Remote</div>
+                        <ul class="space-y-0.5">
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Build and deploy
+                                full-stack web applications independently, managing complete project lifecycle
+                                from initial architecture and requirements through production deployment
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Develop responsive,
+                                production-ready interfaces using React.js with semantic HTML5, CSS3, and
+                                modern design patterns; prioritize user experience and mobile accessibility
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Implement backend
+                                functionality using Node.js and Express.js; design RESTful APIs that securely
+                                connect database layer to frontend clients
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Design and optimize
+                                MySQL databases with proper schema architecture; apply normalization principles
+                                and write efficient queries
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Apply software
+                                engineering best practices including version control (Git), code documentation,
+                                clean architecture principles, and collaborative development standards
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="mb-5 last:mb-0">
+                        <div class="flex justify-between items-center mb-1 gap-2.5">
+                            <h3 class="text-sm font-bold text-dark1">Full Stack Developer</h3>
+                            <time
+                                class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
+                                2025 – 2026</time>
+                        </div>
+                        <div class="text-sm text-grey1 mb-2 italic">Hamlet Fresh Market (Food Retail & E-Commerce)</div>
+                        <ul class="space-y-0.5">
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Architected and built a
+                                production-grade e-commerce platform from ground zero, owning
+                                complete development lifecycle from database schema design through deployment;
+                                implemented
+                                product catalog system, real-time shopping cart, secure checkout flow, and user account
+                                management
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Developed responsive,
+                                mobile-first user interfaces using React.js with semantic HTML5 and CSS3;
+                                optimized for cross-browser compatibility and performance across mobile, tablet, and
+                                desktop devices
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Designed and developed
+                                scalable REST APIs using Node.js and Express.js framework; implemented
+                                async/await patterns and Fetch API for efficient server-side operations and real-time
+                                data handling
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Architected MySQL
+                                database schema with proper normalization, relationships, and query optimization;
+                                managed data integrity across core business operations
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Implemented real-time
+                                frontend functionality using JavaScript (ES6+) for dynamic state management
+                                and DOM manipulation without full page reloads
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Ensured cross-browser
+                                compatibility, accessibility standards, and performance optimization across
+                                all application features
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Technologies: React.js,
+                                Node.js, Express.js, MySQL, JavaScript ES6+, REST APIs, CSS3, HTML5
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="mb-5 last:mb-0">
+                        <div class="flex justify-between items-center mb-1 gap-2.5">
+                            <h3 class="text-sm font-bold text-dark1">English Tutor & Corporate Language Instructor
+                            </h3>
+                            <time
+                                class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
+                                2020 – 2025</time>
+                        </div>
+                        <div class="text-sm text-grey1 mb-2 italic">Freelance - Remote</div>
+                        <ul class="space-y-0.5">
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Delivered professional
+                                English instruction to diverse clients, developing and refining strong
+                                technical writing, documentation, and communication skills essential for software
+                                development
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Managed remote client
+                                relationships and communication across different time zones and cultural contexts
+                            </li>
+                        </ul>
+                    </article>
+
+                </section>
+
+                <!-- EDUCATION -->
+
+                <section class="mb-6 last:mb-0">
+                    <h2 class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
+                            class="w-8 h-1 bg-green1 rounded flex-shrink-0"></span>EDUCATION<span
+                            class="flex-1 h-px bg-grey2"></span></h2>
+
+                    <article class="mb-5 last:mb-0">
+                        <div class="flex justify-between items-center mb-1 gap-2.5">
+                            <h3 class="text-sm font-bold text-dark1">Digi School</h3>
+                            <time
+                                class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
+                                2024 – 2025</time>
+                        </div>
+                        <div class="text-sm text-grey1 mb-2 italic">Full Stack Web Development</div>
+                        <ul class="space-y-0.5">
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Intensive,
+                                project-based full-stack development training covering:
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Frontend: HTML5, CSS3,
+                                JavaScript ES6+, jQuery, AJAX, responsive design, form validation
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Backend: PHP with OOP
+                                and MVC architectural patterns, server-side logic development
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Database: MySQL, schema
+                                design, query optimization, database normalization
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Concepts: Clean code
+                                principles, semantic HTML, cross-browser compatibility, debugging
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Built multiple
+                                full-stack applications emphasizing component reusability and maintainable code
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="mb-5 last:mb-0">
+                        <div class="flex justify-between items-center mb-1 gap-2.5">
+                            <h3 class="text-sm font-bold text-dark1">Moscow Pedagogical State University (MSPU)</h3>
+                            <div
+                                class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
+                                2020 – 2024</div>
+                        </div>
+                        <div class="text-sm text-grey1 mb-2 italic">B.A. in Communicative Linguistics & Translation
+                            (English)</div>
+                        <ul class="space-y-0.5">
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>English major with
+                                professional-level proficiency in written and spoken communication;
+                                completed rigorous coursework in linguistics, translation theory, and cross-cultural
+                                communication
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Developed strong
+                                analytical and structured thinking skills applicable to technical
+                                problem-solving and system design
+                            </li>
+                        </ul>
+                    </article>
+
+                </section>
+
+            </main>
+
+            <!-- RIGHT PANEL -->
+
+            <section
+                class="w-full md:w-64 flex-shrink-0 bg-white1 p-10 border-t md:p-6 md:border-t-0 md:border-l border-grey2">
+
+                <!-- TECH SKILLS -->
+
+                <div class="mb-6 last:mb-0">
+                    <h2 class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
+                            class="w-8 h-1 bg-green1 rounded flex-shrink-0"></span>TECH SKILLS<span
+                            class="flex-1 h-px bg-grey2"></span></h2>
+
+                    <div class="mb-4">
+                        <h3 class="text-xs font-bold text-grey1 tracking-wider mb-2">FRONTEND</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">HTML5</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">CSS3</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">JS
+                                ES6+</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">React.js</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Next.js</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Tailwind
+                                CSS</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Sass</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">jQuery</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">AJAX</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="text-xs font-bold text-grey1 tracking-wider mb-2">BACKEND</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Node.js</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Express.js</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">TypeScript</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">MySQL</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">PHP</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 class="text-xs font-bold text-grey1 tracking-wider mb-2">TOOLS</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Git</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">GitHub</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">VS
+                                Code</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Figma</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Canva</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Browser
+                                Developer
+                                Tools</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 class="text-xs font-bold text-grey1 tracking-wider mb-2">CONCEPTS</h3>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">OOP/MVC</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Version
+                                Control</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Code
+                                Quality & Testing</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">REST
+                                APIs</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">API
+                                Security</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">DOM
+                                Manipulation</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Authentication</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Authorization</span>
+
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Async/Await</span>
+
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Mobile-First
+                            </span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Scalability</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">System
+                                Architecture</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Database
+                                Normalization</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Query
+                                Optimization</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Form
+                                Validation</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Responsive
+                                Design</span>
+                            <span
+                                class="text-xs flex justify-center items-center p-1 rounded text-dark1 border border-grey1">Cross-Browser
+                                Compatibility</span>
+                        </div>
+
+                    </div>
+
+                    <!-- LANGUAGES -->
+
+                    <div class="mb-6 last:mb-0">
+                        <h2 class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
+                                class="w-8 h-1 bg-green1 rounded flex-shrink-0"></span>LANGUAGES<span
+                                class="flex-1 h-px bg-grey2"></span></h2>
+
+                        <div class="mb-3">
+                            <div class="flex justify-between items-center mb-1.25">
+                                <span class="text-sm font-medium text-dark1">English</span>
+                                <span class="text-xs text-grey1">Professional</span>
+                            </div>
+                            <div class="w-full h-1 bg-grey2 rounded-full overflow-hidden">
+                                <div class="lang-fill--fluent h-full rounded-full bg-green1"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="flex justify-between items-center mb-1.25">
+                                <span class="text-sm font-medium text-dark1">Russian</span>
+                                <span class="text-xs text-grey1">Fluent</span>
+                            </div>
+                            <div class="w-full h-1 bg-grey2 rounded-full overflow-hidden">
+                                <div class="lang-fill--fluent h-full rounded-full bg-green1"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-1.25">
+                                <span class="text-sm font-medium text-dark1">Armenian</span>
+                                <span class="text-xs text-grey1">Intermediate</span>
+                            </div>
+                            <div class="w-full h-1 bg-grey2 rounded-full overflow-hidden">
+                                <div class="lang-fill--intermediate h-full rounded-full bg-green1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DETAILS -->
+
+                    <div class="mb-6 last:mb-0">
+                        <h2 class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
+                                class="w-8 h-1 bg-green1 rounded flex-shrink-0"></span>DETAILS<span
+                                class="flex-1 h-px bg-grey2"></span></h2>
+
+                        <div class="mb-3 pb-3 border-b border-grey2 last:border-b-0 last:mb-0 last:pb-0">
+                            <div class="text-xs text-grey1 tracking-wider mb-1">LOCATION</div>
+                            <div class="text-sm text-dark1 font-medium">Yerevan, Armenia</div>
+                        </div>
+                        <div class="mb-3 pb-3 border-b border-grey2 last:border-b-0 last:mb-0 last:pb-0">
+                            <div class="text-xs text-grey1 tracking-wider mb-1">REMOTE WORK</div>
+                            <div class="text-sm text-dark1 font-medium">Open worldwide</div>
+                        </div>
+                        <div class="mb-3 pb-3 border-b border-grey2 last:border-b-0 last:mb-0 last:pb-0">
+                            <div class="text-xs text-grey1 tracking-wider mb-1">EMAIL</div>
+                            <div class="text-sm text-dark1 font-medium"><a href="mailto:alexsardaryan1dev@gmail.com"
+                                    class="text-dark1 no-underline border-b border-green1">alexsardaryan1dev@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="mb-3 pb-3 border-b border-grey2 last:border-b-0 last:mb-0 last:pb-0">
+                            <div class="text-xs text-grey1 tracking-wider mb-1">GITHUB</div>
+                            <div class="text-sm text-dark1 font-medium"><a href="https://github.com/alexsardaryan1-dev"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="text-dark1 no-underline border-b border-green1">alexsardaryan1-dev</a></div>
+                        </div>
+                        <div class="mb-3 pb-3 border-b border-grey2 last:border-b-0 last:mb-0 last:pb-0">
+                            <div class="text-xs text-grey1 tracking-wider mb-1">LINKEDIN</div>
+                            <div class="text-sm text-dark1 font-medium"><a
+                                    href="https://www.linkedin.com/in/alex-sardaryan-34b623398" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-dark1 no-underline border-b border-green1">alex-sardaryan</a></div>
+                        </div>
+                    </div>
+
+            </section>
+        </div>
+    </article>
+
+</body>
+
+</html>
