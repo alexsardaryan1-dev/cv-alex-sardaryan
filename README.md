@@ -21,7 +21,7 @@ Created as a digital CV to showcase my skills, experience, and projects in a dev
 ## Links
 - CV LIVE: https://alexsardaryan1-dev.github.io/cv-alex-sardaryan/
 - GitHub: https://github.com/alexsardaryan1-dev
-- Portfolio: https://alexsardaryan1-dev.github.io/alex-sardaryan-website/
+- Portfolio: [https://alexsardaryan1-dev.github.io/alex-sardaryan-website/](https://alexsardaryan1-dev.github.io/alex-sardaryan-pers-web/)
 
 ## Contact
 - Email: alexsardaryan1@gmail.com
