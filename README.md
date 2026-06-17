@@ -19,7 +19,7 @@ This project is a clean, responsive single-page CV designed to present my profes
 Created as a digital CV to showcase my skills, experience, and projects in a developer-friendly format.
 
 ## Links
-- CV LIVE: https://alexsardaryan1-dev.github.io/cv-alex-sardaryan/
+- CV LIVE: [https://alexsardaryan1-dev.github.io/cv-alex-sardaryan/](https://alexsardaryan1-dev.github.io/cv-alex-sardaryan/)
 - GitHub: https://github.com/alexsardaryan1-dev
 - Portfolio: [https://alexsardaryan1-dev.github.io/alex-sardaryan-website/](https://alexsardaryan1-dev.github.io/alex-sardaryan-pers-web/)
 
