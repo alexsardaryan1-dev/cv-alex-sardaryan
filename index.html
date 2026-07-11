@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Sardaryan — Full Stack Developer</title>
     <link rel="icon" type="image/svg+xml"
-href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230E0E0E'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='13' font-weight='900' fill='%23DFF11E'%3EDEV%3C/text%3E%3C/svg%3E">
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230E0E0E'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='13' font-weight='900' fill='%23DFF11E'%3EDEV%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -47,6 +47,30 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
     <style>
         html {
             scroll-behavior: smooth;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid #DFF11E;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        a:focus:not(:focus-visible),
+        button:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         @media print {
@@ -222,6 +246,8 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
 
 <body class="bg-dark1 text-white font-inter font-normal tracking-tight p-5 border border-dark2 md:p-8">
 
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
     <article class="cv-page max-w-3xl mx-auto p-0 border border-dark2">
 
         <!-- HEADER -->
@@ -235,8 +261,9 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
                     Stack Developer</div>
                 <div class="text-sm text-white1 font-normal">React.js · Node.js · PostgreSQL</div>
                 <a href="alex-sardaryan-fs-cv.pdf" download="alex-sardaryan-fs-cv.pdf"
-                    class="flex items-center w-max gap-1.5 px-2.5 py-1.5 bg-green1 text-dark1 text-xs font-medium tracking-widest rounded-full transition-colors hover:bg-white1 border border-green1 hover:border-dark1">
-                    <i class="fa-solid fa-download"></i>
+                    class="flex items-center w-max gap-1.5 px-2.5 py-1.5 bg-green1 text-dark1 text-xs font-medium tracking-widest rounded-full transition-colors hover:bg-white1 border border-green1 hover:border-dark1"
+                    aria-label="Download Alex Sardaryan's CV as PDF">
+                    <i class="fa-solid fa-download" aria-hidden="true"></i>
                     Save
                 </a>
             </div>
@@ -244,12 +271,14 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
             <address class="text-sm text-grey1 not-italic flex justify-between gap-3 md:flex-row flex-col md:items-end">
 
                 <div class="flex flex-col gap-3">
-                    <span class="flex items-center gap-1 text-grey1"><i
-                            class="fa-solid fa-earth-americas text-green1"></i>Yerevan, Armenia</span>
-                    <span class="flex items-center gap-1"><a href="mailto:alexsardaryan1dev@gmail.com"
+                    <span class="flex items-center gap-1 text-grey1"><i class="fa-solid fa-earth-americas text-green1"
+                            aria-hidden="true"></i>Yerevan, Armenia</span>
+                    <span class="flex items-center gap-1"><a href="mailto:alexsardaryan1@gmail.com"
                             class="flex items-center gap-1 text-grey1 hover:text-green1 transition-colors"><i
-                                class="fa-solid fa-envelope text-green1"></i>alexsardaryan1dev@gmail.com</a></span>
-                    <span class="flex items-center gap-1 text-grey1"><i class="fa-solid fa-phone text-green1"></i>+374
+                                class="fa-solid fa-envelope text-green1"
+                                aria-hidden="true"></i>alexsardaryan1@gmail.com</a></span>
+                    <span class="flex items-center gap-1 text-grey1"><i class="fa-solid fa-phone text-green1"
+                            aria-hidden="true"></i>+374
                         41 03 08 28</span>
                 </div>
 
@@ -257,16 +286,19 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
                     <span class="flex items-center"><a href="https://github.com/alexsardaryan1-dev" target="_blank"
                             rel="noopener noreferrer"
                             class="flex items-center gap-1 text-grey1 hover:text-green1 transition-colors"><i
-                                class="fa-brands fa-github text-green1"></i>GitHub</a></span>
+                                class="fa-brands fa-github text-green1" aria-hidden="true"></i>GitHub<span
+                                class="sr-only"> (opens in a new tab)</span></a></span>
                     <span class="flex items-center"><a href="https://www.linkedin.com/in/alex-sardaryan-34b623398/"
                             target="_blank" rel="noopener noreferrer"
                             class="flex items-center gap-1 text-grey1 hover:text-green1 transition-colors"><i
-                                class="fa-brands fa-linkedin-in text-green1"></i>LinkedIn</a></span>
+                                class="fa-brands fa-linkedin-in text-green1" aria-hidden="true"></i>LinkedIn<span
+                                class="sr-only"> (opens in a new tab)</span></a></span>
                     <span class="flex items-center"><a
                             href="https://alexsardaryan1-dev.github.io/alex-sardaryan-pers-web/" target="_blank"
                             rel="noopener noreferrer"
                             class="flex items-center gap-1 text-grey1 hover:text-green1 transition-colors"><i
-                                class="fa-solid fa-link text-green1"></i>Website</a></span>
+                                class="fa-solid fa-link text-green1" aria-hidden="true"></i>Website<span
+                                class="sr-only"> (opens in a new tab)</span></a></span>
                 </div>
 
             </address>
@@ -277,72 +309,114 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
 
             <!-- MAIN COLUMN -->
 
-            <main class="flex-1 min-w-0 p-10 md:p-6">
+            <main id="main-content" class="flex-1 min-w-0 p-10 md:p-6">
 
                 <!-- SUMMARY -->
 
-                <section class="mb-6 last:mb-0">
-                    <h2 class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
-                            class="w-8 h-1 bg-green1 rounded flex-shrink-0"></span>SUMMARY<span
-                            class="flex-1 h-px bg-grey2"></span></h2>
+                <section class="mb-6 last:mb-0" aria-labelledby="summary-heading">
+                    <h2 id="summary-heading"
+                        class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
+                            class="w-8 h-1 bg-green1 rounded flex-shrink-0" aria-hidden="true"></span>SUMMARY<span
+                            class="flex-1 h-px bg-grey2" aria-hidden="true"></span></h2>
                     <p class="text-dark1 leading-relaxed text-sm border-l-4 border-green1 pl-4">
-                        I am a Full Stack Developer focused on building scalable, production-ready web applications
-                        using React.js, Node.js, Express.js, and PostgreSQL. I develop complete solutions across
-                        frontend, backend, and database layers.
-                        I work with RESTful APIs, authentication systems, and relational database design, and integrate
-                        cloud storage solutions like AWS S3 and Azure Blob Storage.
-                        I take ownership of the full development lifecycle - from planning and architecture to
-                        deployment - and focus on clean, maintainable, and reliable code.
+                        Full Stack Developer with hands-on experience building full-stack web applications using
+                        React.js, Node.js, Express.js, and PostgreSQL. Skilled across the stack — from responsive,
+                        component-based UI development to REST API design, authentication, and relational database
+                        architecture.
+                        Delivered a production-style e-commerce platform both independently and as part of a
+                        collaborative development team, covering the full cycle from schema design to deployment.
+                        Writes clean, maintainable code following MVC principles and picks up new tools and
+                        frameworks quickly.
                     </p>
                 </section>
 
                 <!-- EXPERIENCE -->
 
-                <section class="mb-6 last:mb-0">
-                    <h2 class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
-                            class="w-8 h-1 bg-green1 rounded flex-shrink-0"></span>EXPERIENCE<span
-                            class="flex-1 h-px bg-grey2"></span></h2>
+                <section class="mb-6 last:mb-0" aria-labelledby="experience-heading">
+                    <h2 id="experience-heading"
+                        class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
+                            class="w-8 h-1 bg-green1 rounded flex-shrink-0" aria-hidden="true"></span>EXPERIENCE<span
+                            class="flex-1 h-px bg-grey2" aria-hidden="true"></span></h2>
+
+                    <article class="mb-5 last:mb-0">
+                        <div class="flex justify-between items-center mb-1 gap-2.5">
+                            <h3 class="text-sm font-bold text-dark1">Full Stack Developer Intern</h3>
+                            <time
+                                class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">Jul
+                                2025 – Aug 2025</time>
+                        </div>
+                        <div class="text-sm text-grey1 mb-2 italic">DiGi School | On-site</div>
+                        <ul class="space-y-0.5">
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Built
+                                full-stack e-commerce features using React.js, Node.js, Express.js, and MySQL as part
+                                of a structured training program
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Developed
+                                RESTful APIs for product, user, and order management
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Designed
+                                relational database schemas and wrote SQL queries for core application data
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Implemented
+                                responsive UI features including product filtering, shopping cart, and order
+                                management
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Participated
+                                in code reviews and collaborative development workflows using Git and GitHub
+                            </li>
+                        </ul>
+                    </article>
 
                     <article class="mb-5 last:mb-0">
                         <div class="flex justify-between items-center mb-1 gap-2.5">
                             <h3 class="text-sm font-bold text-dark1">Full Stack Developer</h3>
                             <time
-                                class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">Jul
+                                class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">Sep
                                 2025 – Present</time>
                         </div>
                         <div class="text-sm text-grey1 mb-2 italic">Freelance | Remote</div>
                         <ul class="space-y-0.5">
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Design, develop, and
-                                deploy full-stack web applications from architecture through production deployment
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5" aria-hidden="true">→</span>Take
+                                on freelance projects periodically, designing, building, and deploying full-stack web
+                                applications independently, from planning through production
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Build responsive user
-                                interfaces using React.js, JavaScript (ES6+), HTML5, CSS3, and Tailwind CSS
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Build
+                                responsive, component-based UIs using React.js (Vite), JavaScript (ES6+), and
+                                Tailwind CSS
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Develop RESTful APIs
-                                with Node.js and Express.js, implementing secure authentication, authorization, and
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Develop
+                                and secure RESTful APIs with Node.js and Express.js, including custom authentication
                                 middleware
-                                Develop RESTful APIs with Node.js and Express.js, implementing secure authentication,
-                                authorization, and middleware
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Design and optimize
-                                PostgreSQL databases with normalized schemas and efficient queries
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Design
+                                PostgreSQL database schemas and write queries to support application data needs
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Implement JWT
-                                authentication, HTTP-only cookies, Bcrypt password hashing, email verification, and
-                                password reset workflows using Nodemailer
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Implement
+                                JWT authentication with HTTP-only cookies, Bcrypt password hashing, and email
+                                verification/password-reset flows via Nodemailer
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Integrate AWS S3 and
-                                Azure Blob Storage for secure file and image management
-                            </li>
-                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Apply Git workflows,
-                                clean code principles, debugging, and performance optimization throughout development
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5" aria-hidden="true">→</span>Use
+                                Git for version control and maintain clean, documented code throughout development
                             </li>
                         </ul>
                     </article>
@@ -354,74 +428,44 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
                                 class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
                                 Dec 2025 – May 2026</time>
                         </div>
-                        <div class="text-sm text-grey1 mb-2 italic">Hamova | StartUp</div>
+                        <div class="text-sm text-grey1 mb-2 italic">Startup Hamova | Hybrid</div>
                         <ul class="space-y-0.5">
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Collaborated with a
-                                development team to build a production-ready e-commerce platform with user
-                                authentication and order management
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Built
+                                the customer-facing React.js (Vite) frontend for a production-style e-commerce
+                                platform, using Context API for cart/wishlist/auth state and React Router with
+                                protected routes
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Developed React.js
-                                frontend using Context API, React Router, and protected routes
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Implemented
+                                fuzzy product search with Fuse.js and connected frontend to backend services via
+                                Axios
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Built RESTful backend
-                                services with Node.js and Express.js following security and scalability best practices
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Designed
+                                and built RESTful backend services in Node.js and Express.js for product, user, and
+                                order management, following an MVC architecture
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Designed PostgreSQL
-                                database schemas for products, users, and order processing
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Designed
+                                normalized PostgreSQL schemas for products, users, orders, and order items; wrote
+                                queries for catalog browsing, cart persistence, and order processing
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Implemented JWT
-                                authentication, email verification, password recovery, input validation, CORS
-                                protection, and security middleware
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Implemented
+                                JWT-based authentication with email verification and password recovery, plus input
+                                validation and CORS protection on all API endpoints
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Integrated AWS S3,
-                                Azure Blob Storage, and Nodemailer for image handling and transactional emails
-                            </li>
-                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Participated in
-                                architecture discussions, code reviews, debugging, and technical planning
-                            </li>
-                        </ul>
-                    </article>
-
-                    <article class="mb-5 last:mb-0">
-                        <div class="flex justify-between items-center mb-1 gap-2.5">
-                            <h3 class="text-sm font-bold text-dark1">Full Stack Developer</h3>
-                            <time
-                                class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
-                                Jul 2025 – Aug 2025</time>
-                        </div>
-                        <div class="text-sm text-grey1 mb-2 italic">DiGi School | Internship | On-site</div>
-                        <ul class="space-y-0.5">
-                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Developed full-stack
-                                e-commerce applications using React.js, Node.js, Express.js, and MySQL
-                            </li>
-                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Built RESTful APIs for
-                                product, user, and order management
-                            </li>
-                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Built backend API
-                                endpoints using Node.js and Express.js with RESTful design patterns and
-                                secure authentication
-                            </li>
-                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Designed relational
-                                database schemas and optimized SQL queries for performance
-                            </li>
-                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Implemented responsive
-                                UI features including product filtering, shopping cart, and order management
-                            </li>
-                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Participated in code
-                                reviews, debugging, and collaborative development using Git and GitHub
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Handled
+                                transactional email delivery with Nodemailer and collaborated with a development team
+                                on architecture decisions, code review, and debugging
                             </li>
                         </ul>
                     </article>
@@ -432,25 +476,21 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
                             </h3>
                             <time
                                 class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
-                                Aug 2020 – Jul 2025</time>
+                                Aug 2020 – Jul 2024</time>
                         </div>
-                        <div class="text-sm text-grey1 mb-2 italic">Hybrid</div>
+                        <div class="text-sm text-grey1 mb-2 italic">Freelance | Hybrid</div>
                         <ul class="space-y-0.5">
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Delivered English
-                                instruction to individual and corporate clients in online and in-person settings
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Delivered
+                                English instruction to individual and corporate clients in online and in-person
+                                settings, designing customized learning plans based on student goals
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Designed customized
-                                learning plans based on student goals and progress
-                            </li>
-                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Managed scheduling,
-                                lesson preparation, and long-term client engagement
-                            </li>
-                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Developed strong
-                                communication, presentation, and interpersonal skills in multicultural environments
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Managed
+                                scheduling, lesson preparation, and long-term client relationships, developing
+                                communication and client-facing skills relevant to team-based development work
                             </li>
                         </ul>
                     </article>
@@ -459,72 +499,83 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
 
                 <!-- EDUCATION -->
 
-                <section class="mb-6 last:mb-0">
-                    <h2 class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
-                            class="w-8 h-1 bg-green1 rounded flex-shrink-0"></span>EDUCATION<span
-                            class="flex-1 h-px bg-grey2"></span></h2>
+                <section class="mb-6 last:mb-0" aria-labelledby="education-heading">
+                    <h2 id="education-heading"
+                        class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider"><span
+                            class="w-8 h-1 bg-green1 rounded flex-shrink-0" aria-hidden="true"></span>EDUCATION<span
+                            class="flex-1 h-px bg-grey2" aria-hidden="true"></span></h2>
 
                     <article class="mb-5 last:mb-0">
                         <div class="flex justify-between items-center mb-1 gap-2.5">
-                            <h3 class="text-sm font-bold text-dark1">Digi School</h3>
+                            <h3 class="text-sm font-bold text-dark1">Professional Full Stack Development Program</h3>
                             <time
                                 class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
-                                Sep 2024 – May 2025</time>
+                                2024 – 2025</time>
                         </div>
-                        <div class="text-sm text-grey1 mb-2 italic">Full Stack Web Development</div>
+                        <div class="text-sm text-grey1 mb-2 italic">DiGi School</div>
                         <ul class="space-y-0.5">
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Completed intensive,
-                                project-based training in modern full-stack development
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Completed
+                                intensive, project-based training covering React.js, Node.js, Express.js, and
+                                PostgreSQL, building production-style applications
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Frontend: HTML5, CSS3,
-                                JavaScript, ES6+, jQuery, AJAX, responsive design, form validation, semantic markup
-                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Backend: PHP with OOP
-                                and MVC architectural patterns, server-side logic development, request handling
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Frontend:
+                                React.js, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, responsive design,
+                                component-based architecture
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Database: MySQL,
-                                database design, query optimization, normalization, data relationships, schema
-                                architecture
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Backend:
+                                Node.js, Express.js, RESTful API development, middleware design, MVC architecture
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Core concepts: Clean
-                                code principles, semantic HTML, cross-browser compatibility, debugging, version control
-                                Core concepts: Clean code principles, semantic HTML, cross-browser compatibility,
-                                debugging, version control
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Database:
+                                PostgreSQL and MySQL, database design, schema architecture, relational data modeling
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Built multiple
-                                full-stack applications emphasizing component reusability, maintainability, and code
-                                quality
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5" aria-hidden="true">→</span>Core
+                                concepts: clean code principles, authentication and authorization, debugging, Git
+                                version control
+                            </li>
+                            <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Built
+                                multiple full-stack applications emphasizing component reusability, maintainability,
+                                and code quality
                             </li>
                         </ul>
                     </article>
 
                     <article class="mb-5 last:mb-0">
                         <div class="flex justify-between items-center mb-1 gap-2.5">
-                            <h3 class="text-sm font-bold text-dark1">Moscow Pedagogical State University (MSPU)</h3>
-                            <div
+                            <h3 class="text-sm font-bold text-dark1">B.A. in Communicative Linguistics & Translation
+                                (English)</h3>
+                            <time
                                 class="text-sm text-green1 bg-dark1 px-2 py-0.5 rounded whitespace-nowrap flex-shrink-0">
-                                Sep 2020 – May 2024</div>
+                                2020 – 2024</time>
                         </div>
-                        <div class="text-sm text-grey1 mb-2 italic">B.A. in Communicative Linguistics & Translation
-                            (English)</div>
+                        <div class="text-sm text-grey1 mb-2 italic">Moscow Pedagogical State University (MSPU)</div>
                         <ul class="space-y-0.5">
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>English major with
-                                professional-level proficiency in written and spoken communication
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>English
+                                major with professional-level proficiency in written and spoken communication
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Completed rigorous
-                                coursework in linguistics, translation theory, and cross-cultural communication
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Completed
+                                rigorous coursework in linguistics, translation theory, and cross-cultural
+                                communication
                             </li>
                             <li class="text-sm text-dark1 leading-relaxed flex items-start gap-2">
-                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5">→</span>Developed strong
-                                analytical and structured thinking skills applicable to technical problem-solving and
-                                system design
+                                <span class="text-green2 font-bold flex-shrink-0 mt-0.5"
+                                    aria-hidden="true">→</span>Developed
+                                strong analytical and structured thinking skills applicable to technical
+                                problem-solving and system design
                             </li>
                         </ul>
                     </article>
@@ -535,32 +586,34 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
 
             <!-- RIGHT PANEL -->
             <section
-                class="w-full md:w-64 flex-shrink-0 bg-white1 p-10 border-t md:p-6 md:border-t-0 md:border-l border-grey2">
+                class="w-full md:w-64 flex-shrink-0 bg-white1 p-10 border-t md:p-6 md:border-t-0 md:border-l border-grey2"
+                aria-labelledby="skills-heading">
 
                 <!-- TECH SKILLS -->
                 <div class="mb-6 last:mb-0">
-                    <h2 class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider">
-                        <span class="w-8 h-1 bg-green1 rounded flex-shrink-0"></span>
+                    <h2 id="skills-heading"
+                        class="flex items-center gap-2.5 mb-3.5 text-xs font-bold text-dark1 tracking-wider">
+                        <span class="w-8 h-1 bg-green1 rounded flex-shrink-0" aria-hidden="true"></span>
                         TECH SKILLS
-                        <span class="flex-1 h-px bg-grey2"></span>
+                        <span class="flex-1 h-px bg-grey2" aria-hidden="true"></span>
                     </h2>
 
                     <!-- FRONTEND -->
                     <div class="mb-4">
                         <h3 class="text-xs font-bold text-grey1 tracking-wider mb-2">FRONTEND</h3>
                         <div class="flex flex-wrap gap-1.5 text-black">
+                            <span class="text-xs p-1 border border-grey1 rounded">React.js</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Vite</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">React Router</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Next.js</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Context API</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">JavaScript (ES6+)</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">TypeScript</span>
                             <span class="text-xs p-1 border border-grey1 rounded">HTML5</span>
                             <span class="text-xs p-1 border border-grey1 rounded">CSS3</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">JavaScript (ES6+)</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">React.js</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Next.js</span>
                             <span class="text-xs p-1 border border-grey1 rounded">Tailwind CSS</span>
                             <span class="text-xs p-1 border border-grey1 rounded">Sass</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Mobile-First Design</span>
                             <span class="text-xs p-1 border border-grey1 rounded">Responsive Design</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Semantic HTML</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">DOM Manipulation</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Form Validation</span>
                         </div>
                     </div>
 
@@ -570,12 +623,11 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
                         <div class="flex flex-wrap gap-1.5 text-black">
                             <span class="text-xs p-1 border border-grey1 rounded">Node.js</span>
                             <span class="text-xs p-1 border border-grey1 rounded">Express.js</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">REST APIs</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">JWT Auth</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">bcrypt Password Hashing</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Nodemailer</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">REST API Development</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Middleware Design</span>
                             <span class="text-xs p-1 border border-grey1 rounded">Async/Await</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Server-side Logic</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Error Handling</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Axios</span>
                         </div>
                     </div>
 
@@ -585,43 +637,45 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 
                         <div class="flex flex-wrap gap-1.5 text-black">
                             <span class="text-xs p-1 border border-grey1 rounded">PostgreSQL</span>
                             <span class="text-xs p-1 border border-grey1 rounded">MySQL</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Schema Design</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Database Design</span>
                             <span class="text-xs p-1 border border-grey1 rounded">SQL</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Normalization</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Data Modeling</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Schema Design</span>
                         </div>
                     </div>
 
-                    <!-- CLOUD -->
+                    <!-- TOOLS & PRACTICES -->
                     <div class="mb-4">
-                        <h3 class="text-xs font-bold text-grey1 tracking-wider mb-2">CLOUD & SERVICES</h3>
-                        <div class="flex flex-wrap gap-1.5 text-black">
-                            <span class="text-xs p-1 border border-grey1 rounded">AWS S3</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Azure Blob Storage</span>
-                        </div>
-                    </div>
-
-                    <!-- TOOLS -->
-                    <div class="mb-4">
-                        <h3 class="text-xs font-bold text-grey1 tracking-wider mb-2">TOOLS</h3>
+                        <h3 class="text-xs font-bold text-grey1 tracking-wider mb-2">TOOLS & PRACTICES</h3>
                         <div class="flex flex-wrap gap-1.5 text-black">
                             <span class="text-xs p-1 border border-grey1 rounded">Git</span>
                             <span class="text-xs p-1 border border-grey1 rounded">GitHub</span>
                             <span class="text-xs p-1 border border-grey1 rounded">VS Code</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Debugging</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">API Development</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">MVC Architecture</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Clean Code</span>
                         </div>
                     </div>
 
-                    <!-- CONCEPTS -->
+                    <!-- OTHER -->
                     <div class="mb-4">
-                        <h3 class="text-xs font-bold text-grey1 tracking-wider mb-2">CONCEPTS</h3>
+                        <h3 class="text-xs font-bold text-grey1 tracking-wider mb-2">OTHER</h3>
                         <div class="flex flex-wrap gap-1.5 text-black">
-                            <span class="text-xs p-1 border border-grey1 rounded">OOP</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">MVC</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">REST API Design</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Scalability</span>
-                            <span class="text-xs p-1 border border-grey1 rounded">Clean Code</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">JWT Authentication &
+                                Authorization</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Bcrypt</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">CORS</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Input Validation</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Nodemailer</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Fuse.js (fuzzy search)</span>
+                        </div>
+                    </div>
+
+                    <!-- FAMILIAR WITH -->
+                    <div class="mb-4">
+                        <h3 class="text-xs font-bold text-grey1 tracking-wider mb-2">FAMILIAR WITH (WORKING KNOWLEDGE)
+                        </h3>
+                        <div class="flex flex-wrap gap-1.5 text-black">
+                            <span class="text-xs p-1 border border-grey1 rounded">AWS S3</span>
+                            <span class="text-xs p-1 border border-grey1 rounded">Azure Blob Storage</span>
                         </div>
                     </div>
                 </div>
